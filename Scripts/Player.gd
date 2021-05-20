@@ -8,12 +8,11 @@ var velocity = Vector2.ZERO
 func _process(_delta):
 	velocity.y += GRAVITY
 	check_if_key_pressed()
-	move_and_slide(velocity)
+	move_and_slide(velocity, Vector2.UP)	# The second parameter tells the game where up is
 
 
 func check_if_key_pressed():
-	print ()
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jump()
 
 
