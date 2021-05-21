@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-const GRAVITY = 10
-const JUMP_SPEED = -400
+const GRAVITY = 20
+const JUMP_SPEED = -600
 var velocity = Vector2.ZERO
 
 
@@ -18,3 +18,6 @@ func check_if_key_pressed():
 
 func jump():
 	velocity.y = JUMP_SPEED
+
+func touched_obstacle():
+	get_tree().quit()
