@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Lost Menu/try_again_button.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Lost Menu/try_again_button_hover.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Lost Menu/lost_menu.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Player/i_default.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Lost Menu/switch_button_default.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Lost Menu/switch_button_hover.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Fonts/Minecraft.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+font_data = ExtResource( 7 )
+
+[node name="Lost Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 960.0
+margin_top = 168.0
+margin_right = -950.0
+margin_bottom = -162.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TryAgainButton" type="TextureButton" parent="Background"]
+margin_left = 295.0
+margin_top = 233.0
+margin_right = 665.0
+margin_bottom = 343.0
+texture_normal = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Highest Score" type="Label" parent="Background"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -477.0
+margin_top = 176.0
+margin_right = 475.0
+margin_bottom = 204.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "HIGHEST SCORE:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Your current score" type="Label" parent="Background"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -469.0
+margin_top = 136.0
+margin_right = 475.0
+margin_bottom = 164.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "YOUR CURRENT SCORE:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Your current score2" type="Label" parent="Background"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -229.0
+margin_top = 416.0
+margin_right = 123.0
+margin_bottom = 444.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "SELECTED PLAYER:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectedPlayer_I" type="TextureRect" parent="Background"]
+margin_left = 552.0
+margin_top = 328.0
+margin_right = 872.0
+margin_bottom = 648.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="Background"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -109.0
+margin_top = -126.0
+margin_right = 191.0
+margin_bottom = -36.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
