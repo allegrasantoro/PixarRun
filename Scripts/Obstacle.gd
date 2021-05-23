@@ -2,18 +2,21 @@ extends Area2D
 
 var speed = -500
 var obstacle_list = ["luxo ball rolling", "wall-e walking"]
+var stop_moving = false
 
 func _ready():
 	run_animated_sprite()
 	
 func _process(delta):
-	move(delta)
+	if stop_moving == false : # Checks that the player hasn't died
+		move(delta)
+	
 
 func _on_VisibilityNotifier2D_screen_exited(): # Makes obstacle disappear once it leaves the window
 	queue_free()
 
-func _on_Obstacle_body_entered(body): # Tells the player that it was touched an obstacle
-	body.touched_obstacle()
+func _on_Obstacle_body_entered(body): # Tells the level that the player has touched an obstacle
+	get_tree().call_group("Levels", "lost")
 	
 func run_animated_sprite():
 	var current_obstacle = get_randomised_obstacle()
@@ -46,4 +49,6 @@ func turn_on_collision_shape(obstacle):
 	else:
 		print("invalid obstacle type in Obstacle script")
 
-
+func make_obstacles_stop():
+	stop_moving = true
+	$AnimatedSprite.playing = false

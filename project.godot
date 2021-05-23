@@ -12,13 +12,19 @@ config_version=4
 
 config/name="Lamp escape"
 run/main_scene="res://Scenes/Level.tscn"
-config/icon="res://icon.png"
+config/icon="res://Assets/Obstacles/Luxo ball/sprite_22.png"
+
+[autoload]
+
+Global="*res://Scenes/Global.tscn"
 
 [display]
 
 window/size/width=2880
 window/size/height=960
 window/size/resizable=false
+window/size/fullscreen=true
+window/stretch/aspect="keep_width"
 
 [input]
 
