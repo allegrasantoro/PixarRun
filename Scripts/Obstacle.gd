@@ -52,3 +52,7 @@ func turn_on_collision_shape(obstacle):
 func make_obstacles_stop():
 	stop_moving = true
 	$AnimatedSprite.playing = false
+
+func make_obstacles_start_again():
+	stop_moving = false
+	$AnimatedSprite.playing = true

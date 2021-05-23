@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lost_menu_no_text.png-d1263244c8d46c1636a7ffed651f01d7.stex"
+path="res://.import/NO button.png-fe475d3644dbda65559baa04fc028964.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Lost Menu/lost_menu_no_text.png"
-dest_files=[ "res://.import/lost_menu_no_text.png-d1263244c8d46c1636a7ffed651f01d7.stex" ]
+source_file="res://Assets/Exit Menu/NO button.png"
+dest_files=[ "res://.import/NO button.png-fe475d3644dbda65559baa04fc028964.stex" ]
 
 [params]
 
