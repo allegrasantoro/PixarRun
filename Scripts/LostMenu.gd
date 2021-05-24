@@ -3,7 +3,7 @@ extends Control
 func _ready():
 	display_scores()
 
-func _process(delta):
+func _process(_delta):
 	try_again_button_pressed_handler()
 
 func update_highest_score():

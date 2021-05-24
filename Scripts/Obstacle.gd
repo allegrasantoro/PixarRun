@@ -8,7 +8,7 @@ func _ready():
 	run_animated_sprite()
 	
 func _process(delta):
-	if stop_moving == false : # Checks that the player hasn't died
+	if stop_moving == false : # Checks that the player hasn't died or paused the game
 		move(delta)
 	
 
