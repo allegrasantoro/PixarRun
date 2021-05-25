@@ -64,9 +64,9 @@ func _on_CloudsTimer_timeout():
 func spawn_clouds():
 	print("hi")
 	var clouds_instance = CLOUDS.instance()
-	add_child(clouds_instance)
+	$CloudsContainer.add_child(clouds_instance)
 	
 func spawn_initial_clouds():
 	var clouds_instance = CLOUDS.instance()
 	clouds_instance.position.x = -431
-	add_child(clouds_instance)
+	$CloudsContainer.add_child(clouds_instance)
