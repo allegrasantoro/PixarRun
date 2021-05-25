@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = -500
+var speed = Global.speed + 400
 var obstacle_list = ["luxo ball rolling", "wall-e walking"]
 var stop_moving = false
 

@@ -59,10 +59,10 @@ func check_exit_button():
 
 func _on_CloudsTimer_timeout():
 	if Global.has_lost == false and Global.game_paused == false:
+		print("witctime" + str($CloudsTimer.wait_time) +", " + str( Global.speed))
 		spawn_clouds()
 
 func spawn_clouds():
-	print("hi")
 	var clouds_instance = CLOUDS.instance()
 	$CloudsContainer.add_child(clouds_instance)
 	
@@ -70,3 +70,10 @@ func spawn_initial_clouds():
 	var clouds_instance = CLOUDS.instance()
 	clouds_instance.position.x = -431
 	$CloudsContainer.add_child(clouds_instance)
+
+
+func _on_SpeedTimer_timeout():
+	if (Global.speed > -1400):
+		Global.speed -= 200
+		$CloudsTimer.wait_time /= 1.2
+		$ObstacleSpawnTimer.wait_time /= 1.2
