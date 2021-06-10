@@ -7,6 +7,8 @@ var last_spawned_cloud = null
 var last_spawned_obstacle = null
 
 func _ready():
+	$Player.visible = true
+	$iDeathVideo.visible = false
 	Global.has_lost = false
 	Global.game_paused = false
 	spawn_initial_clouds()
@@ -24,9 +26,24 @@ func lost():
 	$ScoreTimer.stop()
 	get_tree().call_group("Obstacles", "make_obstacles_stop")
 	get_tree().call_group("Clouds", "make_clouds_stop")
+	$BackgroundMusic.stop()
+	if Global.currentPlayer == "i":
+		$iDeathVideo/TimeBeforeVideoStarts.start()
+		
+	else:
+		spawn_lost_menu()
+
+func _on_TimeBeforeVideoStarts_timeout():
+	$Player.visible = false
+	$iDeathVideo.visible = true
+	$iDeathVideo.play()
+	
+func _on_iDeathVideo_finished():
+	spawn_lost_menu()
+	
+func spawn_lost_menu():
 	var lost_menu_instance = LOST_MENU.instance()
 	add_child(lost_menu_instance)
-	$BackgroundMusic.stop()
 	$SoundEffects.set_stream(load("res://Assets/Music/Lost.wav"))
 	$SoundEffects.play()
 	
@@ -79,4 +96,8 @@ func check_spawn_obstacles():
 func _on_SpeedTimer_timeout():
 	if (Global.speed > -1200):
 		Global.speed -= 200
+
+
+
+
 

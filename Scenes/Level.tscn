@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Fonts/PixelFont.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Scripts/PlayerShadow.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Music/Level.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Video/I-lost.ogv" type="VideoStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 192, 64 )
@@ -42,6 +43,20 @@ script = ExtResource( 5 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 208, 872 )
 collision_mask = 6
+
+[node name="iDeathVideo" type="VideoPlayer" parent="."]
+margin_left = 8.0
+margin_top = 240.0
+margin_right = 328.0
+margin_bottom = 1240.0
+rect_scale = Vector2( 0.8, 0.8 )
+stream = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeBeforeVideoStarts" type="Timer" parent="iDeathVideo"]
+one_shot = true
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2( 16, 320 )
@@ -97,6 +112,8 @@ stream = ExtResource( 6 )
 
 [node name="SoundEffects" type="AudioStreamPlayer" parent="."]
 
+[connection signal="finished" from="iDeathVideo" to="." method="_on_iDeathVideo_finished"]
+[connection signal="timeout" from="iDeathVideo/TimeBeforeVideoStarts" to="." method="_on_TimeBeforeVideoStarts_timeout"]
 [connection signal="timeout" from="ObstacleSpawnTimer" to="." method="_on_ObstacleSpawnTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
 [connection signal="timeout" from="SpeedTimer" to="." method="_on_SpeedTimer_timeout"]

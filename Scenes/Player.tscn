@@ -33,7 +33,7 @@ animations = [ {
 extents = Vector2( 20.2133, 62.7559 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 104, 144 )
+extents = Vector2( 88, 144 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 400.267, 554.992 )
@@ -53,5 +53,5 @@ scale = Vector2( 1.9789, 1.40226 )
 shape = SubResource( 2 )
 
 [node name="lampCollisionBox" type="CollisionShape2D" parent="."]
-position = Vector2( -64.267, 29.008 )
+position = Vector2( -72.267, 29.008 )
 shape = SubResource( 3 )
