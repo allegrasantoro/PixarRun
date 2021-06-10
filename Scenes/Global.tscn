@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Global.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fade Animations/fadeToBlack.tres" type="Animation" id=2]
+[ext_resource path="res://Assets/Music/Pause.wav" type="AudioStream" id=3]
 
 [node name="Global" type="Node"]
 script = ExtResource( 1 )
@@ -19,5 +20,8 @@ __meta__ = {
 
 [node name="FadingAnimation" type="AnimationPlayer" parent="."]
 anims/fadeToBlack = ExtResource( 2 )
+
+[node name="ExitSoundEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="animation_finished" from="FadingAnimation" to="." method="_on_FadingAnimation_animation_finished"]

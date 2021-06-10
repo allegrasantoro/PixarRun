@@ -12,6 +12,7 @@ func _ready():
 	spawn_initial_clouds()
 	spawn_obstacle()
 	print(get_tree().get_current_scene().get_name())
+	$BackgroundMusic.play()
 	
 func _process(_delta):
 	update_score()
@@ -25,12 +26,16 @@ func lost():
 	get_tree().call_group("Clouds", "make_clouds_stop")
 	var lost_menu_instance = LOST_MENU.instance()
 	add_child(lost_menu_instance)
-
+	$BackgroundMusic.stop()
+	$SoundEffects.set_stream(load("res://Assets/Music/Lost.wav"))
+	$SoundEffects.play()
+	
 func pause():
 	Global.game_paused = true
 	$ScoreTimer.paused = true
 	get_tree().call_group("Obstacles", "make_obstacles_stop")
 	get_tree().call_group("Clouds", "make_clouds_stop")
+	$BackgroundMusic.stop()
 
 func end_pause():
 	if Global.has_lost == false:
@@ -38,6 +43,7 @@ func end_pause():
 		$ScoreTimer.paused = false
 		get_tree().call_group("Obstacles", "make_obstacles_start_again")
 		get_tree().call_group("Clouds", "make_clouds_start_again")
+		$BackgroundMusic.play()
 		
 func spawn_obstacle():
 	var obstacle_instance = OBSTACLE.instance()

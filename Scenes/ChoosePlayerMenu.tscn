@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Fonts/PixelFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/ChoosePlayerMenu.gd" type="Script" id=2]
@@ -11,17 +11,18 @@
 [ext_resource path="res://Assets/ChooseMenu/start_button_default.png" type="Texture" id=9]
 [ext_resource path="res://Assets/ChooseMenu/BackArrow_hover.png" type="Texture" id=10]
 [ext_resource path="res://Assets/ChooseMenu/BackArrow_default.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Music/ChoosePlayer.wav" type="AudioStream" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "lamp_walking_white",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "lamp_default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "lamp_walking_white",
 "speed": 5.0
 } ]
 
@@ -131,7 +132,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="BackButton" type="TextureButton" parent="."]
 margin_left = 64.0
 margin_top = 48.0
 margin_right = 244.0
@@ -143,7 +144,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+autoplay = true
+
+[node name="SoundEffects" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="ISelector" to="." method="_on_ISelector_pressed"]
 [connection signal="pressed" from="LampSelctor" to="." method="_on_LampSelctor_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Lost Menu/try_again_button.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Lost Menu/try_again_button_hover.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scripts/LostMenu.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Lost Menu/Main_menu_default.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Lost Menu/Main_menu_hover.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Music/Start.wav" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 28
@@ -136,7 +137,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="Background"]
+[node name="MainMenuButton" type="TextureButton" parent="Background"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -152,5 +153,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="SoundEffects" type="AudioStreamPlayer" parent="."]
+
+[node name="TryAgainSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
 [connection signal="pressed" from="Background/SwitchButton" to="." method="_on_SwitchButton_pressed"]
-[connection signal="pressed" from="Background/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Background/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
+[connection signal="finished" from="TryAgainSound" to="." method="_on_TryAgainSound_finished"]

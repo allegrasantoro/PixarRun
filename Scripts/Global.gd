@@ -18,6 +18,7 @@ func _process(delta):
 	
 func check_exit_button():
 	if Input.is_action_just_pressed("ui_end") and Global.game_paused == false:
+		$ExitSoundEffect.play()
 		var exit_menu_instance = EXIT_MENU.instance()
 		get_tree().get_root().get_node(".").add_child(exit_menu_instance)
 		if get_tree().get_current_scene().get_name() == "Level":

@@ -21,6 +21,8 @@ func highlight_i():
 	$Players/Lamp.animation = "lamp_default"
 	$Players/Lamp.playing = false
 	$Players/I.set_texture(preload("res://Assets/i/i white.png")) 
+	$SoundEffects.set_stream(load("res://Assets/Music/Switch.wav"))
+	$SoundEffects.play()
 
 func highlight_lamp():
 	currentPlayerSelection = "lamp"
@@ -29,6 +31,8 @@ func highlight_lamp():
 	$Players/Lamp.animation = "lamp_walking_white"
 	$Players/Lamp.playing = true
 	$Players/I.set_texture(preload("res://Assets/i/i_default.png"))
+	$SoundEffects.set_stream(load("res://Assets/Music/Switch.wav"))
+	$SoundEffects.play()
 	
 func switch_selection():
 	if currentPlayerSelection == "lamp":
@@ -48,9 +52,13 @@ func _on_StartButton_pressed():
 	start_game()
 	
 func start_game():
+	$BackgroundMusic.stop()
+	$SoundEffects.set_stream(load("res://Assets/Music/Start.wav"))
+	$SoundEffects.play()
 	Global.currentPlayer = currentPlayerSelection
 	Global.go_to_scene("res://Scenes/Level.tscn")
 
-
-func _on_TextureButton_pressed():
+func _on_BackButton_pressed():
+	$SoundEffects.set_stream(load("res://Assets/Music/BackToMainMenu.wav"))
+	$SoundEffects.play()
 	Global.go_to_scene("res://Scenes/StartMenu.tscn")
