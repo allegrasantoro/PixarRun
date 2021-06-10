@@ -18,10 +18,6 @@ func _process(_delta):
 	check_spawn_clouds()
 	check_spawn_obstacles()
 	
-#func _on_ObstacleSpawnTimer_timeout():
-#	if Global.has_lost == false and Global.game_paused == false:
-#		spawn_obstacle()
-	
 func lost():
 	Global.has_lost = true
 	$ScoreTimer.stop()

@@ -7,6 +7,7 @@ var game_paused = false
 var has_lost = false
 var followingScene = "" 
 var currentPlayer = "i"
+var is_jumping = false
 const EXIT_MENU = preload("res://Scenes/ExitMenu.tscn")
 
 func _ready():

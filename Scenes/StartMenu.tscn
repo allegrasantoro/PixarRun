@@ -80,7 +80,6 @@ position = Vector2( 632, 1128 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 2 )
 animation = "lamp walking"
-frame = 2
 playing = true
 
 [node name="i container" type="Node2D" parent="."]

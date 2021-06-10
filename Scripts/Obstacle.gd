@@ -19,7 +19,11 @@ func _on_Obstacle_body_entered(body): # Tells the level that the player has touc
 	get_tree().call_group("Levels", "lost")
 	
 func run_animated_sprite():
-	var current_obstacle = get_randomised_obstacle()
+	var current_obstacle = ""
+	if Global.current_score < 30:
+		current_obstacle = "luxo ball rolling"
+	else:
+		current_obstacle = get_randomised_obstacle()
 	$AnimatedSprite.animation = current_obstacle
 	change_obstacle_position(current_obstacle)
 	turn_on_collision_shape(current_obstacle)
