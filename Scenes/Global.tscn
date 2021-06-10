@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Global.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fade Animations/fadeToBlack.tres" type="Animation" id=2]
 
 [node name="Global" type="Node"]
 script = ExtResource( 1 )
+
+[node name="FadeToBlackLayer" type="CanvasLayer" parent="."]
+
+[node name="BlackRectangle" type="ColorRect" parent="FadeToBlackLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FadingAnimation" type="AnimationPlayer" parent="."]
+anims/fadeToBlack = ExtResource( 2 )
+
+[connection signal="animation_finished" from="FadingAnimation" to="." method="_on_FadingAnimation_animation_finished"]

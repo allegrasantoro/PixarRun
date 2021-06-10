@@ -18,4 +18,5 @@ func display_scores():
 func try_again_button_pressed_handler():
 	if $Background/TryAgainButton.pressed:
 		Global.current_score = 0
+		Global.speed = -900
 		get_tree().change_scene("res://Scenes/Level.tscn")
