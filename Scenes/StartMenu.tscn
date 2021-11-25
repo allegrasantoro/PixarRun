@@ -59,11 +59,11 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -313.0
+margin_left = -458.5
 margin_top = -123.0
-margin_right = 313.0
+margin_right = 458.5
 custom_fonts/font = SubResource( 1 )
-text = "Press SPACE to start
+text = "Press SPACE or CLICK to start
 "
 __meta__ = {
 "_edit_use_anchors_": false

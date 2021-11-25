@@ -13,14 +13,14 @@ animations = [ {
 "name": "i",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "lamp_going_down",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "lamp_running",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "lamp_going_down",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
