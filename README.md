@@ -1,1 +1,2 @@
 # PixarRun
+Pixar Run is an endless runner game that focuses on Pixar's iconic lamp seen in the opening of the majority of their features. This game displays a scenario where the lamp fails to jump on Pixar's "I", so the latter tries to outrun the lamp. The game contains completely original illustrations and animations created by me using Pixel Art. This was my first experience with Godot and my first completed game.
